@@ -1,0 +1,276 @@
+{
+  "info": {
+    "_postman_id": "ba8defdf-8a15-474d-bcbb-74f9d55c3140",
+    "name": "EmployeeRecord",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "employee",
+      "item": [
+        {
+          "name": "create employee",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"lebron\",\r\n    \"lastName\": \"james\",\r\n    \"department\": \"IT\",\r\n    \"income\": 2500,\r\n    \"location\": \"izmir\",\r\n    \"startDate\": \"02-02-2021\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/employee",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employee"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get employee",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employee/r77HKVtF",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employee",
+                "r77HKVtF"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employee",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employee"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "pageSize",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get custom list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employee/custom?date=02-02-2021&income=250",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employee",
+                "custom"
+              ],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "02-02-2021"
+                },
+                {
+                  "key": "income",
+                  "value": "250"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update employee",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"firat\",\r\n    \"lastName\": \"doldur\",\r\n    \"department\": \"SALE\",\r\n    \"income\": 250123,\r\n    \"location\": \"istanbul\",\r\n    \"startDate\": \"05-02-2021\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/employee/r77HKVtF",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employee",
+                "r77HKVtF"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update locations by department",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"location\": \"karsiyaka\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/employee/department/IT",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employee",
+                "department",
+                "IT"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete employee",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employee/r77HKVtF",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employee",
+                "r77HKVtF"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "winner",
+      "item": [
+        {
+          "name": "get winner by given date",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/monthly-winner/custom-date?year=2021&month=8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "monthly-winner",
+                "custom-date"
+              ],
+              "query": [
+                {
+                  "key": "year",
+                  "value": "2021"
+                },
+                {
+                  "key": "month",
+                  "value": "8"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get this months winner",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/monthly-winner",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "monthly-winner"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete winner",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/monthly-winner/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "monthly-winner",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
